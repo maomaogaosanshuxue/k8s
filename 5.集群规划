@@ -1,0 +1,9 @@
+官方提供三种部署工具
+minikube
+
+kubeadm
+kubeadm也是工具 提供kubeadm init 和kubeadm join 用于快速部署kubernetes集群
+
+二进制
+  从官方下载发行版的二进制包 手动部署每个组件 组成kubernetes集群
+  下载地址：https//github.com/kubernetes/kubernetes/release
