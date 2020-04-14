@@ -1,0 +1,16 @@
+master node:主
+worker node：工作
+
+master节点的组件（程序）
+ apiserver：接受客户端操作可k8s的指令
+ schduler ：从多个worker node节点的组件中选举一个来启动服务
+ controller manager：向worker节点的kubectl发送指令的
+
+node节点的组件（程序）
+ kubelet：向docker发送指令管理docker容器
+
+ kubeproxy ：管理docker容器的网络
+
+etcd
+	k8s的数据库
+	用来注册节点，服务，记录
