@@ -1,7 +1,8 @@
 cni
 [root@js-k8s-master cfg]# cat kube-controller-manager 
 KUBE_CONTROLLER_MANAGER_OPTS="--logtostderr=true \
---v=4 \
+--v=2 \
+--log-dir=/k8s/kubernetes/logs \
 --master=127.0.0.1:8080 \
 --leader-elect=true \
 --address=127.0.0.1 \
@@ -16,7 +17,9 @@ KUBE_CONTROLLER_MANAGER_OPTS="--logtostderr=true \
 
 
 KUBELET_OPTS="--logtostderr=true \
---v=4 \
+--v=2 \
+--log-dir=/k8s/kubernetes/logs \
+
 --hostname-override=192.168.200.154 \
 --kubeconfig=/k8s/kubernetes/cfg/kubelet.kubeconfig \
 --bootstrap-kubeconfig=/k8s/kubernetes/cfg/bootstrap.kubeconfig \
@@ -37,7 +40,9 @@ KUBELET_OPTS="--logtostderr=true \
                    --authorization-kubeconfig=/k8s/kubernetes/cfg/kubectl.kubeconfig \
                    --alsologtostderr=true \
                    --kube-api-qps=100 \
-                   --kube-api-burst=100 \
+                   --kube-api-burst=100 
+                   --log-dir=/k8s/kubernetes/logs \\
+                   
                    --v=2"
 
 
