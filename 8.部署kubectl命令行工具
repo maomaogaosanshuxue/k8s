@@ -3,7 +3,7 @@ tar -zxf etcd-v3.3.11-linux-amd64.tar.gz
 cd etcd-v3.3.11-linux-amd64/
 cp etcd etcdctl /k8s/etcd/bin/
 mkdir /var/lib/etcd/default.etcd 
-mkdir /k8s/etcd/bin/etcd
+
 
 
 vim /k8s/etcd/cfg/etcd   
