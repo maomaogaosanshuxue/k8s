@@ -1,3 +1,9 @@
+设置环境变量(所有服务器都执行此步)
+vim /etc/profile
+PATH=/k8s/kubernetes/bin:$PATH
+PATH=/k8s/etcd/bin:$PATH
+source /etc/profile
+
 etcd安装
 tar -zxf etcd-v3.3.11-linux-amd64.tar.gz
 cd etcd-v3.3.11-linux-amd64/
