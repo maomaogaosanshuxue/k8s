@@ -37,7 +37,7 @@ Wants=network-online.target
 [Service]
 Type=notify
 EnvironmentFile=/k8s/etcd/cfg/etcd
-ExecStart=/k8s/etcd/bin/etcd
+ExecStart=/k8s/etcd/bin/etcd \
 --cert-file=/k8s/etcd/ssl/server.pem \
 --key-file=/k8s/etcd/ssl/server-key.pem \
 --peer-cert-file=/k8s/etcd/ssl/server.pem \
@@ -65,6 +65,7 @@ systemctl enable etcd
 systemctl start etcd
 、etcd服务检查
 /k8s/etcd/bin/etcdctl --ca-file=/k8s/etcd/ssl/ca.pem --cert-file=/k8s/etcd/ssl/server.pem --key-file=/k8s/etcd/ssl/server-key.pem --endpoints="https://192.168.1.237:2379,https://192.168.1.238:2379,https://192.168.1.201:2379" cluster-health
+
 以下为输出：
 member 262d942ab474feaa is healthy: got healthy result from https://192.168.1.237:2379
 member 3e95c59733e7d54f is healthy: got healthy result from https://192.168.1.238:2379
