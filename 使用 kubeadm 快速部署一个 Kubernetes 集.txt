@@ -23,7 +23,8 @@ $ kubeadm join <Master节点的IP和端口>
 
 可以访问外网，需要拉取镜像；
 
-禁止swap分区。
+禁止swap分区。  /etc/sysconfig/kubelet
+KUBELET_EXTRA_ARGS=--fail-swap-on=false
 2.准备环境
 角色	IP
 k8s-master	192.168.31.61
