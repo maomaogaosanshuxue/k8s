@@ -1,0 +1,47 @@
+[root@k8s-master demo]# cat .git/config
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = git@47.113.122.218:/home/git/demo.git  #地址
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
+[root@k8s-master demo]# ls /root/.ssh/
+authorized_keys  id_rsa  id_rsa.pub  known_hosts
+[root@k8s-master demo]# cat /root/.ssh/id_rsa #获取私钥
+
+
+#Add Credentials
+#ssh
+
+#私钥
+
+#cat /root/.ssh/id_rsa
+
+#git credentialsId: '66170829-0054-46d9-8a12-9cbf47d98947', url: 'git@47.113.122.218:/home/git/demo.git'
+
+#node  {
+   stage('拉取代码') {
+      git credentialsId: '66170829-0054-46d9-8a12-9cbf47d98947', url: 'git@47.113.122.218:/home/git/demo.git'
+      sh 'ls'
+   }
+   stage('代码构建') {   
+       
+   }
+   stage('部署') {
+       
+   }
+    
+}
+
+
+
+
+
+
+

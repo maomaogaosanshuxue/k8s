@@ -1,0 +1,6 @@
+创建Jenkinsfile
+
+
+Pipeline SCM  git部署
+
+

@@ -1,0 +1,40 @@
+免交互
+ssh-keygen
+回车
+ssh-copy-id git@47.113.122.218 #拷贝到47
+ssh git@47.113.122.218
+输入密码
+ok
+
+slave分布式管理
+
+jenkins 在集群外部之外 k8是对外api地址
+ca证书    k8s admin.config
+
+
+jenkins 外部域名访问的地址
+git  Pipeline kubenetes     Kubernetes Continuous Deploy
+
+settings.xml
+构建jenkins slave镜像 #拉取代码  单元测试  代码编译  构建镜像 推送镜像
+
+官方
+获取jenkins.slave.jar包 #inlpJars/slave.jar
+获取jenkins-slave 脚本 https://github.com/jenkins/docker-jnlp-slave
+settings.xml #maven  仓库群  添加阿里云仓库下载问题
+ <mirror>
+      <id>mirrorId</id>
+      <mirrorOf>repositoryId</mirrorOf>
+      <name>Human Readable Name for this Mirror.</name>
+      <url>http://my.repository.com/repo/path</url>
+    </mirror>
+     -->
+    <mirror>
+      <id>central</id>
+      <mirrorOf>central</mirrorOf>
+      <name>aliyun maven</name>
+      <url>https://maven.aliyun.com/repository/public</url> #COPY settings.xml /etc/maven/settings.xml 
+    </mirror>
+  </mirrors>
+
+
